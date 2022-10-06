@@ -10,14 +10,15 @@ let vapidKeys = {
 push.setVapidDetails('mailto:test@test.com', vapidKeys.publicKey, vapidKeys.privateKey);
 
 const pushSubscription = {
-    endpoint: 'https://fcm.googleapis.com/fcm/send/dpxtMhLUxcM:APA91bE9V6Zca6zHBkveGTHu6TaLq53n7bT6YQpBcibVrhW57URleDit9jgxVgId3Kr6aLYCiUfA0emNvhbCRFLkHbVJTJekFE0RfONdXgnbc-7HgHzvkJ-O3G5dPH3BDK63fvxwSHhc',
-    expirationTime: null,
-    keys: {
-        p256dh: 'BPIUvX2ghgaF9Po6kMaxrHvl8JipaHmLxRMJjtrUqBEQrAk_CCvUXyOdr2nYGK3qd1q9-iq5YVryI3I37v0dC04',
-        auth: 'IMIyQp028PykJkE0lN7qpw'
+    endpoint: 'https://fcm.googleapis.com/fcm/send/f9o-G6gzQLE:APA91bGIS96DvFIkBNOJA42DoP7vZuNyQDeFTgfwzLe1gule1_6hWoUzeOplUWjs9d11AkGFxfF8WOxBNbf0egBd6mnOzWOndo60GIxib6yR2O97rVQNKr2gBB_rqNjiU2NIvVrD8ATQ',
+        expirationTime: null,
+            keys: {
+        p256dh: 'BOuHJoN6Ren3E1nQPwlvq_8hUkhWaVk9q4jVJQ85GPfbbb3FzLLh5Y696XBCUIJJS_YRdFPp38R4xwKKwnR8a3Y',
+            auth: 'ow9lO41YKoveO2WCfgMn6A'
     }
 };
 const payload = JSON.stringify({ title: "Asif Test!", body: "From Asif's Laptop!" })
+console.log(payload)
 push.sendNotification(pushSubscription, payload);
 
 //console.log(vapidKeys)

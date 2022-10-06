@@ -11,12 +11,22 @@ async function send() {
     console.log("Registering Service Wroker...");
     const register = await navigator.serviceWorker.register("/serviceWorker.js", {
         scope: "/"
+    }).then((reg) =>{
+      if(reg.installing){
+        console.log("Service Worker Installing..");
+      } else if(reg.waiting){
+        console.log("Service Worker Installed...");
+      } else if(reg.active) {
+        console.log("Service Worker Active...");
+      }
     });
     console.log("Service Worker registered...");
 
+
     // Register Push
     console.log("Registering Push...");
-    const subscription = await register.pushManager.subscribe({
+    let sw = await navigator.serviceWorker.ready;
+    const subscription = await sw.pushManager.subscribe({
         userVisibleOnly: true,
         applicationServerKey: urlBase64ToUint8Array(publicVapidKey)
     });
