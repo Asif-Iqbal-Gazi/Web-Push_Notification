@@ -6,7 +6,7 @@ self.addEventListener("push", e => {
   const data = e.data.json();
   console.log("Push Recieved...");
   self.registration.showNotification(data.title, {
-    body: "Test Notification Sent!",
+    body: "Test Notification Sent !",
     icon: "https://cdn-icons-png.flaticon.com/512/783/783012.png"
   });
 });
